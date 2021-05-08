@@ -1,0 +1,122 @@
+.dialog-editor {
+    width: 1000px;
+    padding: 10px;
+    .header-container {
+        width: 100%;
+        display: flex;
+
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        .header {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .close {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+    .container-input {
+        display: flex;
+        align-items: center;
+        .check-email-available {
+            margin-left: 10px;
+            display: flex; 
+            width: fit-content;
+            border: unset;
+            height: 30px;
+            align-items: center;
+            background-color: rgb(233, 233, 53);
+            cursor: pointer;
+            margin-right: 10px;
+            &.disabled {
+                background-color: rgb(173, 173, 173);
+            }
+            .icon-container {
+                border: 1px solid black;
+                height: 18px;
+                width: 18px;
+                margin-right: 10px;
+                .mat-icon {
+                    height: 19px;
+                    width: 18px;
+                    font-size: 14px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .info-available {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .container-checked {
+                width: 20px;
+                height: 20px;
+                background-color: green;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                .mat-icon {
+                    color: white;
+                    width: 16px;
+                    height: 16px;
+                    font-size: 16px;
+                }
+            }   
+        }
+    }
+    .container-input-line {
+        display: flex;
+        width: 100%;
+        
+        .container-input1 {
+            display: flex;
+            width: 25%;
+            align-items: center;
+            .label {
+                margin-right: 10px;
+            }
+            margin-top: 20px;
+            .mat-radio-label {
+                margin-right: 20px;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        width: 100%;
+        .cancel-btn {
+            cursor: pointer;
+            border: unset;
+            color: white;
+            background-color: rgba(207, 34, 34, 0.788);
+            width: 80px;
+            text-align: center;
+            height: 28px;
+            line-height: 28px;
+            margin-right: 10px;
+        }
+        .save-btn {
+            cursor: pointer;
+            border: unset;
+            color: white;
+            background-color: rgba(52, 52, 230, 0.753);
+            width: 80px;
+            text-align: center;
+            line-height: 28px;
+            height: 28px;
+            &:disabled {
+                background-color: grey;
+                color: black;
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

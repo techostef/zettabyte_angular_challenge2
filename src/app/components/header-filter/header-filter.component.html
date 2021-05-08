@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="label">{{label}}</div>
+    <div class="separator"></div>
+    <div>
+      <mat-form-field
+        auto
+        class="example-full-width"
+        *ngIf="type === 'text'"
+      >
+        <input 
+          name="search"
+          matInput 
+          placeholder="Search" 
+          (keyup)="keyUpInput($event.target.value)" 
+          value="{{value}}"
+        >
+      </mat-form-field>
+
+      <mat-form-field 
+        class="example-full-width"
+        *ngIf="type === 'autocomplate'"
+      >
+        <input 
+          type="text"
+          placeholder="Search"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+          value="{{value}}"
+        >
+        <mat-autocomplete 
+          #auto="matAutocomplete" 
+          [displayWith]="displayFn"
+          (optionSelected)='keyUpInput($event.option.value)'
+        >
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field 
+        *ngIf="type === 'select' || type === 'status'"
+      >
+        <mat-select
+          (selectionChange)="keyUpInput($event.value)"
+          [(value)]="value"
+        >
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div
+        *ngIf="type === 'empty'"
+        class="empty-search"
+      ></div>
+    </div>
+</div> 

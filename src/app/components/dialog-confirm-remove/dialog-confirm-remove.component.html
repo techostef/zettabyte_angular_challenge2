@@ -1,0 +1,26 @@
+<div class="dialog-confirm-remove">
+    <div class="cirlce-bravo">
+        <mat-icon>checked</mat-icon>
+    </div>
+    <div class="text">
+        {{ warningText }}
+    </div>
+    <div class="info">
+        {{ confirmText }}
+    </div>
+    <div class="buttons">
+        <button
+            class="confirm-btn"
+            (click)="onConfirmRemove()"
+            [disabled]="countDown > 0"
+        >
+            {{ labelConfirm }} {{ countDown > 0 ? ('in ' + countDown) : ''}}
+        </button>
+        <button
+            class="cancel-btn"
+            (click)="onCloseDialog()"
+        >
+            {{ labelCancel }}
+        </button>
+    </div>
+</div>
